@@ -35,11 +35,12 @@ const Header = () => {
         </nav>
 
         <button
+          id="hamburger"
           type="button"
           aria-controls="menu"
           aria-expanded={isOpen ? "false" : "true"}
           className={`${isOpen ? "hidden" : "block"} md:hidden`}
-          tabIndex={isOpen ? 0 : -1}
+          tabIndex={isOpen ? -1 : 0}
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
@@ -61,6 +62,7 @@ const Header = () => {
           </svg>
         </button>
         <button
+          id="cross"
           type="button"
           aria-controls="menu"
           aria-expanded={isOpen ? "true" : "false"}
