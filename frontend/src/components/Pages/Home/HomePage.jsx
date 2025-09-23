@@ -1,14 +1,12 @@
-import Footer from "../common/Footer/Footer.jsx";
-import Header from "../common/Header/Header.jsx";
-import Pagination from "../Pagination/Pagination.jsx";
-import ProductCard from "../ProductCard/ProductCard.jsx";
-import products from "../ProductCard/products.js";
+import MainLayout from "../../common/MainLayout/MainLayout.jsx";
+import Pagination from "./Pagination/Pagination.jsx";
+import ProductCard from "./ProductCard/ProductCard.jsx";
+import products from "./ProductCard/products.js";
 
 const HomePage = () => {
   return (
     <>
-      <Header />
-      <main className="container mx-auto py-16 px-4">
+      <MainLayout>
         <h1 className="text-4xl font-bold text-center text-black mb-12">
           Our Products
         </h1>
@@ -22,8 +20,7 @@ const HomePage = () => {
           ))}
         </div>
         <Pagination />
-      </main>
-      <Footer />;
+      </MainLayout>
     </>
   );
 };
