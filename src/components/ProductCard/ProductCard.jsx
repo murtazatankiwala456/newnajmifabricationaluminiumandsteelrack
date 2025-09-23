@@ -1,13 +1,20 @@
 const ProductCard = ({ name, image }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <article
+      className="bg-white rounded-lg shadow-md overflow-hidden"
+      aria-labelledby={`product-${name}`}
+    >
       <div className="-200 h-64">
-        <img src={image} className="w-full h-full object-contain" alt="image" />
+        <img
+          src={image}
+          className="w-full h-full object-contain"
+          alt={`image of ${name}`}
+        />
       </div>
       <div className="p-6">
         <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
       </div>
-    </div>
+    </article>
   );
 };
 
