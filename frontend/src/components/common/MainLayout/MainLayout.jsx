@@ -5,7 +5,9 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="container mx-auto py-16 px-4">{children}</main>
+      <main role="main" className="container mx-auto py-16 px-4 flex-grow">
+        {children}
+      </main>
       <Footer />
     </>
   );

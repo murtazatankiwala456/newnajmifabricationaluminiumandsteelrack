@@ -1,9 +1,10 @@
-import bracket from "../../assets/images/bracket.jpg";
-import rack from "../../assets/images/rack.jpg";
-import window from "../../assets/images/window.jpeg";
-import door from "../../assets/images/door.jpg";
-import angle from "../../assets/images/angle.jpg";
-import jaali from "../../assets/images/jaali.jpg";
+import bracket from "/images/bracket.jpg";
+import rack from "/images/rack.jpg";
+import window from "/images/window.jpeg";
+import door from "/images/door.jpg";
+import angle from "/images/angle.jpg";
+import jaali from "/images/jaali.jpg";
+
 const products = [
   {
     id: 1,
