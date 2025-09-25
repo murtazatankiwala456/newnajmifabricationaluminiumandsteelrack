@@ -8,16 +8,25 @@ const AboutUs = () => {
         About Us
       </h1>
       <div className="max-w-4xl mx-auto">
-        <section aria-labelledby="what-we-do">
-          <h2 className="text-3xl font-bold text-black mb-4 text-center">
+        <section
+          aria-labelledby="what-we-do"
+          aria-describedby="what-we-do-desc"
+        >
+          <h2
+            className="text-3xl font-bold text-black mb-6 text-center"
+            id="what-we-do"
+          >
             What We Do
           </h2>
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <p
+            className="text-gray-700 text-lg leading-relaxed mb-2"
+            id="what-we-do-desc"
+          >
             At <strong>New Najmi Fabrication Aluminium & Steel Racks</strong>,
             we specialize in providing durable, innovative, and customized
             storage and structural solutions.
           </p>
-          <ul class="list-disc pl-6 text-gray-700 text-lg leading-relaxed space-y-2">
+          <ul className="list-disc pl-6 text-gray-700 text-lg leading-relaxed space-y-2">
             <li>
               <strong>Aluminium Sections</strong> – lightweight, strong, and
               versatile profiles for commercial and residential use.
@@ -37,7 +46,7 @@ const AboutUs = () => {
               durability and safety.
             </li>
           </ul>
-          <p class="text-gray-700 text-lg leading-relaxed mt-4">
+          <p className="text-gray-700 text-lg leading-relaxed mt-4">
             We don’t just sell products — we provide{" "}
             <strong>long-lasting solutions</strong> that make your spaces more
             efficient, organized, and modern.
