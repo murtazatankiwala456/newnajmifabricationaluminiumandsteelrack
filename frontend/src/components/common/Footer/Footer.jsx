@@ -1,13 +1,13 @@
 const Footer = () => {
   return (
     <footer
-      class="bg-primary py-6 mt-16"
+      className="bg-primary py-6 mt-16"
       role="contentinfo"
       aria-label="Footer"
       tabIndex="-1"
     >
-      <div class="container mx-auto text-center">
-        <p class="text-white">
+      <div className="container mx-auto text-center">
+        <p className="text-white">
           © Copyright
           <a
             href="https://www.linkedin.com/in/murtaza-tankiwala-486782268/"
