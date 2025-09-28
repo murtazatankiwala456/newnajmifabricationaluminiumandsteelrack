@@ -1,7 +1,7 @@
 import MainLayout from "../../common/MainLayout/MainLayout";
 import Pagination from "./Pagination/Pagination";
 import ProductCard from "./ProductCard/ProductCard";
-import products from "./ProductCard/products.js";
+import products from "./ProductCard/products";
 
 const HomePage = () => {
   return (

@@ -1,10 +1,11 @@
 import MainLayout from "../../common/MainLayout/MainLayout";
-import ContactUs from "./ContactUs/ContactUs";
-
+import ContactUsForm from "./ContactUsForm/ContactUsForm";
+import SocialLinks from "./SocialLinks/SocialLinks";
 const ContactUsPage = () => {
   return (
     <MainLayout>
-      <ContactUs />
+      <ContactUsForm />
+      <SocialLinks />
     </MainLayout>
   );
 };

@@ -1,6 +1,5 @@
 import { useState } from "react";
-import SocialLinks from "../Social-Links/SocialLinks";
-const ContactUs = () => {
+const ContactUsForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -151,8 +150,7 @@ const ContactUs = () => {
           </form>
         </div>
       </section>
-      <SocialLinks />
     </div>
   );
 };
-export default ContactUs;
+export default ContactUsForm;
