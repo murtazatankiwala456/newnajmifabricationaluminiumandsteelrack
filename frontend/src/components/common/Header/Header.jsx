@@ -6,7 +6,7 @@ const Header = () => {
     <header className="bg-primary p-6" role="banner" aria-label="Header">
       <div className="mx-auto flex justify-between items-center">
         <div className="text-white text-2xl font-bold">LOGO</div>
-        <nav className="flex items-center space-x-8 hidden md:block">
+        <nav className="flex items-center space-x-8 hidden md:block" id="menu">
           <a
             className="text-white hover:text-gray-200"
             href="#"
@@ -37,14 +37,14 @@ const Header = () => {
           id="hamburger"
           type="button"
           aria-controls="menu"
-          aria-expanded={isOpen ? "false" : "true"}
+          aria-expanded={isOpen ? "true" : "false"}
           className={`${isOpen ? "hidden" : "block"} md:hidden`}
           tabIndex={isOpen ? -1 : 0}
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
-            aria-hidden="true"
+            aria-hidden={isOpen ? "false" : "true"}
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -64,14 +64,14 @@ const Header = () => {
           id="cross"
           type="button"
           aria-controls="menu"
-          aria-expanded={isOpen ? "true" : "false"}
+          aria-expanded={isOpen ? "false" : "true"}
           className={`${isOpen ? "block" : "hidden"} md:hidden`}
           tabIndex={isOpen ? 0 : -1}
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
-            aria-hidden="true"
+            aria-hidden={isOpen ? "true" : "false"}
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -92,12 +92,15 @@ const Header = () => {
       {isOpen && (
         <nav
           className="flex flex-col justify-center space-y-4 mt-4 md:hidden"
-          href="#"
-          role="menuitem"
-          aria-label="Link Home"
-          tabIndex={isOpen ? 0 : -1}
+          id="menu"
         >
-          <a className="text-white hover:text-gray-200" href="#">
+          <a
+            className="text-white hover:text-gray-200"
+            href="#"
+            role="menuitem"
+            aria-label="Link Home"
+            tabIndex={isOpen ? 0 : -1}
+          >
             Home
           </a>
           <a

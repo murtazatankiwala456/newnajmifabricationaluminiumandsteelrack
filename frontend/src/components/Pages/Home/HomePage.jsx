@@ -1,6 +1,6 @@
-import MainLayout from "../../common/MainLayout/MainLayout.jsx";
-import Pagination from "./Pagination/Pagination.jsx";
-import ProductCard from "./ProductCard/ProductCard.jsx";
+import MainLayout from "../../common/MainLayout/MainLayout";
+import Pagination from "./Pagination/Pagination";
+import ProductCard from "./ProductCard/ProductCard";
 import products from "./ProductCard/products.js";
 
 const HomePage = () => {
