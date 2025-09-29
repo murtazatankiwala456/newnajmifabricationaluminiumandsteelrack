@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -7,30 +8,30 @@ const Header = () => {
       <div className="mx-auto flex justify-between items-center">
         <div className="text-white text-2xl font-bold">LOGO</div>
         <nav className="flex items-center space-x-8 hidden md:block" id="menu">
-          <a
+          <NavLink
+            to={"/"}
             className="text-white hover:text-gray-200"
-            href="#"
             role="menuitem"
             aria-label="Link Home"
           >
             Home
-          </a>
-          <a
-            className="text-white hover:text-gray-200 active-link"
-            href="#"
+          </NavLink>
+          <NavLink
+            to={"/about-us"}
+            className="text-white hover:text-gray-200"
             role="menuitem"
             aria-label="Link About Us"
           >
             About Us
-          </a>
-          <a
+          </NavLink>
+          <NavLink
+            to={"/contact-us"}
             className="text-white hover:text-gray-200"
-            href="#"
             role="menuitem"
             aria-label="Link Contact Us"
           >
             Contact Us
-          </a>
+          </NavLink>
         </nav>
 
         <button
@@ -94,33 +95,33 @@ const Header = () => {
           className="flex flex-col justify-center space-y-4 mt-4 md:hidden"
           id="menu"
         >
-          <a
+          <NavLink
+            to={"/"}
             className="text-white hover:text-gray-200"
-            href="#"
             role="menuitem"
             aria-label="Link Home"
             tabIndex={isOpen ? 0 : -1}
           >
             Home
-          </a>
-          <a
-            className="text-white hover:text-gray-200 active-link"
-            href="#"
+          </NavLink>
+          <NavLink
+            to={"/about-us"}
+            className="text-white hover:text-gray-200"
             role="menuitem"
             aria-label="Link About Us"
             tabIndex={isOpen ? 0 : -1}
           >
             About Us
-          </a>
-          <a
+          </NavLink>
+          <NavLink
+            to={"/contact-us"}
             className="text-white hover:text-gray-200"
-            href="#"
             role="menuitem"
             aria-label="Link Contact Us"
             tabIndex={isOpen ? 0 : -1}
           >
             Contact Us
-          </a>
+          </NavLink>
         </nav>
       )}
     </header>

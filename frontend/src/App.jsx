@@ -1,16 +1,14 @@
-//import AboutUsPage from "./components/Pages/About-Us/AboutUsPage";
+import AboutUsPage from "./components/Pages/About-Us/AboutUsPage";
 import ContactUsPage from "./components/pages/Contact-Us/ContactUsPage";
-//import ContactUs from "./components/Pages/Contact-us/ContactUs";
-
-// import HomePage from "./components/Pages/Home/HomePage.jsx";
-
+import HomePage from "./components/Pages/Home/HomePage.jsx";
+import { Routes, Route } from "react-router-dom";
 const App = () => {
   return (
-    <>
-      {/* <HomePage /> */}
-      {/* <AboutUsPage /> */}
-      <ContactUsPage />
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about-us" element={<AboutUsPage />} />
+      <Route path="/contact-us" element={<ContactUsPage />} />
+    </Routes>
   );
 };
 
