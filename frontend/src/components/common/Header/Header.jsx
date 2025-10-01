@@ -4,7 +4,11 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-primary p-6" role="banner" aria-label="Header">
+    <header
+      className="bg-primary p-6 sticky top-0"
+      role="banner"
+      aria-label="Header"
+    >
       <div className="mx-auto flex justify-between items-center">
         <div className="text-white text-2xl font-bold">LOGO</div>
         <nav className="flex items-center space-x-8 hidden md:block" id="menu">
