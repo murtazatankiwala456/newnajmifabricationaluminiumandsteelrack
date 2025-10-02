@@ -4,6 +4,11 @@ import { useParams } from "react-router-dom";
 const ProductDetail = () => {
   const { id } = useParams();
   const product = products.find((product) => product.id === parseInt(id));
+  const whatsappNumber = "919977436552";
+  const whatsappMessage = `Hi, I'm interested in ${product.name} what will be the price?`;
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+  const whatsapplink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 className="text-4xl font-bold text-headings mb-8">Product Detail</h1>
@@ -29,7 +34,9 @@ const ProductDetail = () => {
         </div>
         <div className="absolute bottom-5 right-5">
           <button className="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
-            <FaWhatsapp className="text-3xl" />
+            <a href={whatsapplink} target="_blank">
+              <FaWhatsapp className="text-3xl" />
+            </a>
           </button>
         </div>
       </div>
