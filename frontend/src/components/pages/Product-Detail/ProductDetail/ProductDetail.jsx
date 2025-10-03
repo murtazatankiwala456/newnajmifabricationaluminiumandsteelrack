@@ -7,7 +7,7 @@ const ProductDetail = () => {
   const whatsappNumber = "919977436552";
   const whatsappMessage = `Hi, I'm interested in ${product.name} what will be the price?`;
   const encodedMessage = encodeURIComponent(whatsappMessage);
-  const whatsapplink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
   return (
     <div
@@ -27,7 +27,6 @@ const ProductDetail = () => {
         <div className="md:flex">
           <div className="md:w-1/2 p-8 flex items-center justify-center bg-neutral-accent">
             <img
-              alt="A placeholder image for the product, showing a light gray box with the text 'Product Image' in the center."
               className="object-cover w-full h-full rounded"
               alt={`Image of ${product.name}`}
               src={product.imageUrl}
@@ -47,7 +46,7 @@ const ProductDetail = () => {
         <div className="absolute bottom-5 right-5">
           <button className="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
             <a
-              href={whatsapplink}
+              href={whatsappLink}
               target="_blank"
               aria-label={`Contact us on WhatsApp about ${product.name}`}
             >
