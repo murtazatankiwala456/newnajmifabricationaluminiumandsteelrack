@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ name, image, id }) => {
   return (
-    <Link to={`/product-detail/${id}`}>
+    <Link to={`/products/${id}`}>
       <article
         className="bg-white rounded-lg shadow-md overflow-hidden"
         aria-labelledby={`product-${name}`}

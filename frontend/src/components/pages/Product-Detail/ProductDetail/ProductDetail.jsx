@@ -1,11 +1,25 @@
+import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import products from "../../Home/ProductCard/products";
+//import products from "../../Home/ProductCard/products";
 import { useParams } from "react-router-dom";
 const ProductDetail = () => {
+  const [product, setProduct] = useState({});
   const { id } = useParams();
-  const product = products.find((product) => product.id === parseInt(id));
+  const fetchSingleProduct = async (id) => {
+    try {
+      const response = await fetch(`https://dummyjson.com/products/${id}`);
+      const data = await response.json();
+      setProduct(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchSingleProduct(id);
+  }, [id]);
+
   const whatsappNumber = "919977436552";
-  const whatsappMessage = `Hi, I'm interested in ${product.name} what will be the price?`;
+  const whatsappMessage = `Hi, I'm interested in ${product.title} what will be the price?`;
   const encodedMessage = encodeURIComponent(whatsappMessage);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
@@ -22,19 +36,19 @@ const ProductDetail = () => {
       </h1>
       <div
         className="bg-secondary rounded-lg shadow-lg overflow-hidden relative"
-        aria-label={`Details about ${product.name}`}
+        aria-label={`Details about ${product.title}`}
       >
         <div className="md:flex">
           <div className="md:w-1/2 p-8 flex items-center justify-center bg-neutral-accent">
             <img
               className="object-cover w-full h-full rounded"
-              alt={`Image of ${product.name}`}
-              src={product.imageUrl}
+              alt={`Image of ${product.title || "Product"} `}
+              src={product.images?.[0]}
             />
           </div>
           <div className="md:w-1/2 p-8 flex flex-col justify-center">
             <h2 className="text-3xl font-bold text-headings mb-4">
-              {product.name}
+              {product.title}
             </h2>
             {/* <ul className="list-disc pl-6 text-gray-700 text-lg leading-relaxed space-y-2">
               <li>Size:6ft and 10ft</li>
@@ -48,7 +62,7 @@ const ProductDetail = () => {
             <a
               href={whatsappLink}
               target="_blank"
-              aria-label={`Contact us on WhatsApp about ${product.name}`}
+              aria-label={`Contact us on WhatsApp about ${product.title}`}
             >
               <FaWhatsapp className="text-3xl" aria-hidden="true" />
             </a>

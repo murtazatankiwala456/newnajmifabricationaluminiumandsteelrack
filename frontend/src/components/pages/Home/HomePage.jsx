@@ -1,9 +1,25 @@
+import { useState, useEffect } from "react";
 import MainLayout from "../../common/MainLayout/MainLayout";
 import Pagination from "./Pagination/Pagination";
 import ProductCard from "./ProductCard/ProductCard";
-import products from "./ProductCard/products.js";
+//import products from "./ProductCard/products.js";
 
 const HomePage = () => {
+  const [products, setProducts] = useState([]);
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("https://dummyjson.com/products?limit=6");
+      const data = await response.json();
+      setProducts(data.products);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   return (
     <>
       <MainLayout>
@@ -18,8 +34,8 @@ const HomePage = () => {
             <ProductCard
               key={product.id}
               id={product.id}
-              name={product.name}
-              image={product.imageUrl}
+              name={product.title}
+              image={product.images[0]}
             />
           ))}
         </div>
