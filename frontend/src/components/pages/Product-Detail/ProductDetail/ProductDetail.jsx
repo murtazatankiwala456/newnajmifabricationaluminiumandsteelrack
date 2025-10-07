@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 //import products from "../../Home/ProductCard/products";
 import { useParams } from "react-router-dom";
+import Loader from "../../../common/Loader/Loader";
 const ProductDetail = () => {
   const [product, setProduct] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const fetchSingleProduct = async (id) => {
     try {
@@ -12,6 +14,8 @@ const ProductDetail = () => {
       setProduct(data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
   useEffect(() => {
@@ -23,7 +27,9 @@ const ProductDetail = () => {
   const encodedMessage = encodeURIComponent(whatsappMessage);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       aria-labelledby="product-detail-heading"
