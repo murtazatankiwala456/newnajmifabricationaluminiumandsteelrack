@@ -3,17 +3,21 @@ import { FaWhatsapp } from "react-icons/fa";
 //import products from "../../Home/ProductCard/products";
 import { useParams } from "react-router-dom";
 import Loader from "../../../common/Loader/Loader";
+import { FaExclamationTriangle } from "react-icons/fa";
 const ProductDetail = () => {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { id } = useParams();
   const fetchSingleProduct = async (id) => {
     try {
       const response = await fetch(`https://dummyjson.com/products/${id}`);
+      if (!response.ok)
+        throw new Error("Failed to Fetch your Selected Product!");
       const data = await response.json();
       setProduct(data);
     } catch (error) {
-      console.log(error);
+      setError(error.message);
     } finally {
       setIsLoading(false);
     }
@@ -27,9 +31,22 @@ const ProductDetail = () => {
   const encodedMessage = encodeURIComponent(whatsappMessage);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-  return isLoading ? (
-    <Loader />
-  ) : (
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return (
+      <div className="flex justify-center items-center mt-20 gap-2 text-red-600">
+        <FaExclamationTriangle className="text-3xl" aria-hidden="true" />
+        <p className="font-bold text-2xl" role="alert">
+          {error}
+        </p>
+      </div>
+    );
+  }
+
+  return (
     <div
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       aria-labelledby="product-detail-heading"
