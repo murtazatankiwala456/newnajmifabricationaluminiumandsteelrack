@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import MainLayout from "../../common/MainLayout/MainLayout";
+import MainLayout from "../../common/Layout/MainLayout/MainLayout";
 import Pagination from "./Pagination/Pagination";
 import ProductCard from "./ProductCard/ProductCard";
 import Loader from "../../common/Loader/Loader";

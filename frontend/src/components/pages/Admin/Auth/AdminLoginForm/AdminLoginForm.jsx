@@ -1,5 +1,6 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { use, useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const AdminLoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const togglePassword = () => setShowPassword(!showPassword);
@@ -8,7 +9,8 @@ const AdminLoginForm = () => {
     password: "",
   });
   const [error, setError] = useState({});
-  const [successMessage, setSuccessMessage] = useState("");
+  const navigator = useNavigate();
+
   //dummy auth
   const username = "admin";
   const password = "123";
@@ -37,8 +39,10 @@ const AdminLoginForm = () => {
     setError(validateErrors);
 
     if (Object.keys(validateErrors).length === 0) {
-      setSuccessMessage("Login successful");
-      setTimeout(() => setSuccessMessage(""), 5000);
+      //temporary login logic
+      localStorage.setItem("isAdminLoggedIn", "true");
+      navigator("/admin/home");
+      //temporary login logic
     }
   };
   return (
@@ -111,9 +115,6 @@ const AdminLoginForm = () => {
                 Login
               </button>
             </form>
-            {successMessage && (
-              <p className="text-green-500 text-sm mt-2">{successMessage}</p>
-            )}
           </section>
         </div>
       </div>

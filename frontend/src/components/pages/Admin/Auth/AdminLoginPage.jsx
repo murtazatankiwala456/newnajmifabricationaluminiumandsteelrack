@@ -1,5 +1,5 @@
-import Footer from "../../common/Footer/Footer";
-import AdminLoginForm from "./Auth/AdminLoginForm/AdminLoginForm";
+import Footer from "../../../common/Footer/Footer";
+import AdminLoginForm from "./AdminLoginForm/AdminLoginForm";
 const AdminLoginPage = () => {
   return (
     <>

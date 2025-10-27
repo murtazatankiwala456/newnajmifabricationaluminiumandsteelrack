@@ -1,4 +1,4 @@
-import MainLayout from "../../common/MainLayout/MainLayout";
+import MainLayout from "../../common/Layout/MainLayout/MainLayout";
 import AboutUs from "./AboutUs/AboutUs";
 
 const AboutUsPage = () => {
