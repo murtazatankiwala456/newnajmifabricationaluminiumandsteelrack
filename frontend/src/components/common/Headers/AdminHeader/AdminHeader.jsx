@@ -16,10 +16,12 @@ const AdminHeader = () => {
       aria-label="Header"
     >
       <div className="mx-auto flex justify-between items-center">
-        <div className="text-white text-2xl font-bold">LOGO</div>
+        <NavLink to={"/admin/home"}>
+          <div className="text-white text-2xl font-bold">LOGO</div>
+        </NavLink>
         <nav className="flex items-center space-x-8 hidden md:flex" id="menu">
           <NavLink
-            to={"/upload"}
+            to={"/admin/upload-product"}
             className="flex items-center text-white hover:text-gray-200 space-x-2"
             role="menuitem"
             aria-label="Upload Product"
@@ -38,15 +40,15 @@ const AdminHeader = () => {
             <span>Dashboard</span>
           </NavLink>
 
-          <NavLink
-            to={"/admin"}
+          <button
+            onClick={handleLogout}
             className="flex items-center text-white hover:text-gray-200 space-x-2 cursor-pointer"
             role="menuitem"
             aria-label="Logout"
           >
             <span className="material-icons text-lg">logout</span>
-            <span onClick={handleLogout}>Logout</span>
-          </NavLink>
+            <span>Logout</span>
+          </button>
         </nav>
         <button
           id="hamburger"
@@ -106,7 +108,7 @@ const AdminHeader = () => {
       {isOpen && (
         <nav className="flex flex-col space-y-4 mt-4 md:hidden" id="menu">
           <NavLink
-            to={"/upload"}
+            to={"/admin/upload-product"}
             className="flex items-center text-white hover:text-gray-200 space-x-2"
             aria-label="Upload Product"
           >
@@ -123,14 +125,14 @@ const AdminHeader = () => {
             <span>Dashboard</span>
           </NavLink>
 
-          <NavLink
-            to={"/admin"}
+          <button
+            onClick={handleLogout}
             className="flex items-center text-white hover:text-gray-200 space-x-2 cursor-pointer"
             aria-label="Logout"
           >
             <span className="material-icons text-lg">logout</span>
-            <span onClick={handleLogout}>Logout</span>
-          </NavLink>
+            <span>Logout</span>
+          </button>
         </nav>
       )}
     </header>

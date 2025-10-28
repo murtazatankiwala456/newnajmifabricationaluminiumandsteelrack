@@ -6,6 +6,7 @@ import ProductDetailPage from "./components/pages/Product-Detail/ProductDetailPa
 import AdminLoginPage from "./components/pages/Admin/Auth/AdminLoginPage";
 import AdminHomePage from "./components/pages/Admin/AdminHome/AdminHomePage.jsx";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx";
+import UploadProductPage from "./components/pages/Admin/Products/UploadProduct/UploadProductPage.jsx";
 
 const App = () => {
   return (
@@ -20,6 +21,14 @@ const App = () => {
         element={
           <ProtectedRoute>
             <AdminHomePage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/upload-product"
+        element={
+          <ProtectedRoute>
+            <UploadProductPage />
           </ProtectedRoute>
         }
       />
