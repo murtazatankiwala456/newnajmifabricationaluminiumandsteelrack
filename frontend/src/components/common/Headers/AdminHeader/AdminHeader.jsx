@@ -31,13 +31,22 @@ const AdminHeader = () => {
           </NavLink>
 
           <NavLink
-            to={"/dashboard"}
+            to={"/admin/products"}
             className="flex items-center text-white hover:text-gray-200 space-x-2"
             role="menuitem"
             aria-label="Dashboard"
           >
-            <span className="material-icons text-lg">dashboard</span>
-            <span>Dashboard</span>
+            <span className="material-icons text-lg">format_list_numbered</span>
+            <span>Products</span>
+          </NavLink>
+          <NavLink
+            to={"/admin/contact-inqueries"}
+            className="flex items-center text-white hover:text-gray-200 space-x-2"
+            role="menuitem"
+            aria-label="Dashboard"
+          >
+            <span className="material-icons text-lg">groups</span>
+            <span>Contact Inqueries</span>
           </NavLink>
 
           <button

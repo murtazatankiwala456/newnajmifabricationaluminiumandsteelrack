@@ -6,7 +6,10 @@ import ProductDetailPage from "./components/pages/Product-Detail/ProductDetailPa
 import AdminLoginPage from "./components/pages/Admin/Auth/AdminLoginPage";
 import AdminHomePage from "./components/pages/Admin/AdminHome/AdminHomePage.jsx";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx";
-import UploadProductPage from "./components/pages/Admin/Products/UploadProduct/UploadProductPage.jsx";
+import UploadProductPage from "./components/pages/Admin/AdminProduct/UploadProduct/UploadProductPage.jsx";
+import ProductTablePage from "./components/pages/Admin/AdminProduct/Products/ProductTablePage.jsx";
+import UpdateProductPage from "./components/pages/Admin/AdminProduct/UpdateProduct/UpdateProductPage.jsx";
+import ContactInqueriesPage from "./components/pages/Admin/AdminContactsInqueries/ContactInqueriesPage.jsx";
 
 const App = () => {
   return (
@@ -29,6 +32,30 @@ const App = () => {
         element={
           <ProtectedRoute>
             <UploadProductPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/products"
+        element={
+          <ProtectedRoute>
+            <ProductTablePage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/update-product"
+        element={
+          <ProtectedRoute>
+            <UpdateProductPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/contact-inqueries"
+        element={
+          <ProtectedRoute>
+            <ContactInqueriesPage />
           </ProtectedRoute>
         }
       />
